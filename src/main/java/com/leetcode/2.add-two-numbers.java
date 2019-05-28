@@ -39,7 +39,24 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        你好，你真的很立即
+        ListNode result,p = new ListNode(0);
+        result = p;
+        int number = 0;
+        while(l1 != null || l2 != null || number != 0){
+            if(l1 != null){
+                number += l1.val;
+                l1 = l1.next;
+            }
+            if(l2 != null){
+                number += l2.val;
+                l2 = l2.next;
+            }
+            p.next = new ListNode(number%10);
+            p = p.next;
+            number = number/10;
+
+        }
+        return result.next;
     }
 }
 
